@@ -47,7 +47,7 @@ spec:
   template:
     metadata:
       labels:
-      name: mongo
+        name: mongo
     spec:
       containers:
       - name: mongo
@@ -56,10 +56,10 @@ spec:
         - name: mongo
           containerPort: 27017
           hostPort: 27017
-      volumeMount:
-      - name: mongo-persistent-storage
-        mounthPath: /data/db
-    volume:
+        volumeMounts:
+        - name: mongo-persistent-storage
+          mountPath: /data/db
+    volumes:
     - name: mongo-persistent-storage
       hostPath:
         path: /tmp/dbbackup
