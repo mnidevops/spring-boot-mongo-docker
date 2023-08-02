@@ -12,7 +12,7 @@ spec:
         name: springboot
     spec:
       containers:
-      - image: dockerhandson/spring-boot-mongo
+      - image: mnidevops/spring-boot-mongo
         name: springboot
         ports:
         - name: springboot
@@ -49,13 +49,13 @@ spec:
       labels:
       name: mongo
     spec:
-    containers:
-    - name: mongo
-      image: mongo
-      ports:
+      containers:
       - name: mongo
-        containerPort: 27017
-        hostPort: 27017
+        image: mongo
+        ports:
+        - name: mongo
+          containerPort: 27017
+          hostPort: 27017
       volumeMounts:
       - name: mongo-persistent-storage
         mounthPath: /data/db
