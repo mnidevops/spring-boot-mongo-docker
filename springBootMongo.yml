@@ -3,12 +3,12 @@ kind: ReplicationController
 metadata:
   labels:
     name: springboot
-    name: spring-controller
+  name: spring-controller
 spec:
   replicas: 1
   template:
     metadata:
-      labeles:
+      labels:
         name: springboot
     spec:
       containers:
@@ -56,10 +56,10 @@ spec:
         - name: mongo
           containerPort: 27017
           hostPort: 27017
-      volumeMounts:
+      volumeMount:
       - name: mongo-persistent-storage
         mounthPath: /data/db
-    volumes:
+    volume:
     - name: mongo-persistent-storage
       hostPath:
         path: /tmp/dbbackup
